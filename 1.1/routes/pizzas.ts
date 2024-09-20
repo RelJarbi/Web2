@@ -158,4 +158,9 @@ router.patch("/:id", (req, res) => {
   return res.json(updatedPizza);
 });
 
+router.get("/error", (_req, _res, _next) => {
+  throw new Error("This is an error");
+  // equivalent of next(new Error("This is an error"));
+});
+
 export default router;
